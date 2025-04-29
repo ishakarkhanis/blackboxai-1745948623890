@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scholarship Filtration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-['Roboto'] min-h-screen flex flex-col items-center p-6">
+  <header class="w-full max-w-4xl mb-6">
+    <h1 class="text-3xl font-bold text-center text-gray-800">Scholarship Filtration</h1>
+  </header>
+  <main class="w-full max-w-4xl bg-white p-6 rounded shadow">
+    <form id="filterForm" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div>
+        <label for="fieldOfStudy" class="block text-gray-700 font-semibold mb-2">Field of Study</label>
+        <input type="text" id="fieldOfStudy" name="fieldOfStudy" placeholder="e.g. Computer Science" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+      </div>
+      <div>
+        <label for="eligibility" class="block text-gray-700 font-semibold mb-2">Eligibility</label>
+        <input type="text" id="eligibility" name="eligibility" placeholder="e.g. Undergraduate" class="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required />
+      </div>
+      <div class="md:col-span-2">
+        <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 transition">Filter Scholarships</button>
+      </div>
+    </form>
+    <section id="resultsSection">
+      <h2 class="text-xl font-semibold mb-4 text-gray-700">Results</h2>
+      <ul id="resultsList" class="space-y-4 max-h-96 overflow-y-auto"></ul>
+    </section>
+  </main>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
