@@ -70,18 +70,18 @@ if (loginForm) {
 // Sample scholarship data
 const scholarships = [
   // Science scholarships (5)
-  { id: 1, title: "Science Innovators Grant", field: "Science", eligibility: "Graduate" },
-  { id: 2, title: "Environmental Studies Grant", field: "Science", eligibility: "Undergraduate" },
-  { id: 3, title: "Biology Research Scholarship", field: "Science", eligibility: "Undergraduate" },
-  { id: 4, title: "Physics Excellence Award", field: "Science", eligibility: "Graduate" },
-  { id: 5, title: "Chemistry Scholars Fund", field: "Science", eligibility: "Undergraduate" },
+  { id: 1, title: "Science Innovators Grant", field: "Science", eligibility: "Graduate", providers: ["Harvard University", "MIT", "Stanford University"] },
+  { id: 2, title: "Environmental Studies Grant", field: "Science", eligibility: "Undergraduate", providers: ["University of California, Berkeley", "Yale University", "University of Oxford"] },
+  { id: 3, title: "Biology Research Scholarship", field: "Science", eligibility: "Undergraduate", providers: ["Johns Hopkins University", "University of Cambridge", "University of Toronto"] },
+  { id: 4, title: "Physics Excellence Award", field: "Science", eligibility: "Graduate", providers: ["Caltech", "Princeton University", "ETH Zurich"] },
+  { id: 5, title: "Chemistry Scholars Fund", field: "Science", eligibility: "Undergraduate", providers: ["University of Chicago", "Columbia University", "University of Tokyo"] },
 
   // Computer Science scholarships (5)
-  { id: 26, title: "Computer Science Innovators Award", field: "Computer Science", eligibility: "Undergraduate" },
-  { id: 27, title: "AI Research Grant", field: "Computer Science", eligibility: "Graduate" },
-  { id: 28, title: "Software Engineering Scholarship", field: "Computer Science", eligibility: "Undergraduate" },
-  { id: 29, title: "Data Science Fellowship", field: "Computer Science", eligibility: "Graduate" },
-  { id: 30, title: "Cybersecurity Scholars Fund", field: "Computer Science", eligibility: "Undergraduate" },
+  { id: 26, title: "Computer Science Innovators Award", field: "Computer Science", eligibility: "Undergraduate", providers: ["Carnegie Mellon University", "University of Washington", "University of Illinois Urbana-Champaign"] },
+  { id: 27, title: "AI Research Grant", field: "Computer Science", eligibility: "Graduate", providers: ["MIT", "Stanford University", "University of Toronto"] },
+  { id: 28, title: "Software Engineering Scholarship", field: "Computer Science", eligibility: "Undergraduate", providers: ["University of California, San Diego", "Georgia Tech", "University of Texas at Austin"] },
+  { id: 29, title: "Data Science Fellowship", field: "Computer Science", eligibility: "Graduate", providers: ["Harvard University", "Columbia University", "University of Michigan"] },
+  { id: 30, title: "Cybersecurity Scholars Fund", field: "Computer Science", eligibility: "Undergraduate", providers: ["University of Maryland", "University of California, Berkeley", "University of Cambridge"] },
 
   // Commerce scholarships (5)
   { id: 6, title: "Commerce Leaders Scholarship", field: "Commerce", eligibility: "Undergraduate" },
@@ -146,6 +146,10 @@ if (filterForm) {
         <p><strong>Field of Study:</strong> ${scholarship.field}</p>
         <p><strong>Eligibility:</strong> ${scholarship.eligibility}</p>
       `;
+      // Add click event to show providers
+      li.addEventListener('click', () => {
+        alert('Provided by: ' + (scholarship.providers ? scholarship.providers.join(', ') : 'No providers listed'));
+      });
       resultsList.appendChild(li);
     });
   });
